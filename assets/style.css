@@ -43,7 +43,7 @@ html {
     and bottom so we are providing shadows with positive values. each r g b vale goes from 0-255 opacity goes from 0-1. 
     0 means it is completely transparent and 1 means it is completely opaque. 255 for each rgb value is white and 0 for 
     each rgb value is black*/
-    text-shadow: 3px 3px 2px rgba(255,255,255,0.5);
+    text-shadow: 3px 3px 2px rgba(255, 255, 255, 0.5);
 }
 
 /* by giving a velue pf 'float' to each of these block element divs, I can make them 'float' side by side, 
@@ -64,7 +64,7 @@ and right next to each other. next we need to add proper margins and padding to 
     margin-left: 45px;
     text-align: center;
     color: white;
-    text-shadow: 1.5px 1.5px 1px rgba(255,255,255,0.5);
+    text-shadow: 1.5px 1.5px 1px rgba(255, 255, 255, 0.5);
 }
 /* css has collapsing properties when two values merge as the same value such as an upper div 
 with margin-bottom: 50px and lower div with margin-top: 50px; you would think you would have 
@@ -76,7 +76,31 @@ would count 20px between the two divs sharing margins.*/
     margin: 50px;
     margin-left: 38px;
     color: white;
-    text-shadow: 1.5px 1.5px 1px rgba(255,255,255,0.5);
+    /* text-shadow has the following properties: h-shadow v-shadow blur rgbs*/
+    text-shadow: 1.5px 1.5px 1px rgba(255, 255, 255, 0.5);
+}
+
+#new {
+    background-color: #e6e6e6;
+    margin: 16px;
+    font-size: 40px;
+    font-weight: 500;
+    text-shadow: 2px 2px 2px rgba(94, 119, 115, 0.82);
+    /* border property has the following values: width type color - where width is size of the border, 
+    type is type of line such as: solid dashed dotted.*/
+    border: 1px solid grey;
+    /* box-shadow has the following values: h-shadow v-shadow blur spread rgbs. remeber two positive values 
+    will give you a bottom right dropshadow */
+    box-shadow: 2px 2px 1px 0px rgba(119, 116, 115, 1);
+    font-family: serif;
+}
+
+/* whenever you want to choose a hover condtion - what happens to an element when you hover over it, you need to 
+add a pseudo selector by selecting the element, add colon then the effect of hover. so when we hover over this 'new' 
+game button, what happens? cursor becomes tha hand pointer*/
+#new:hover {
+    cursor:pointer;
+    background-color: #cccccc;
 }
 
 #game {
