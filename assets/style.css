@@ -1,7 +1,7 @@
 /*override browser default margin and padding properties by setting 
 them to zero so we can overrride them later when we are desiging 
 our elements. This is so the browser has nothing to do with our styles; 
-later all the styles are our own styling.*/
+later all the styles are our own styling. '*' selects all elements on the page*/
 * {
     /* usually all programmers give margin and padding as 0 to start on css*/
     margin: 0;
@@ -20,4 +20,28 @@ later all the styles are our own styling.*/
     -webkit-user-select: none; /* Google Chrome & Safari */
     /* from css3, add user select 'none' so that the user cannot select any of the elements on the page*/
     user-select: none;
+}
+
+/*by selecting 'html', you are selecting the root of the page; the entire page. 
+So if you want to set the background color of the entire page you select the 'html' root */
+html {
+    background-color: #333333;
+}
+
+#h1 {
+    color: #f2f2f2;
+    text-align: center;
+    font-size: 90px;
+    margin-top: 0px;
+    font-weight: bolder;
+    /* 'letter-spacing' is kerning between each letter. It overrrides default browser letter spacing.*/
+    letter-spacing: 3px;
+    /* 'word-spacing' gives spacing between two words */
+    word-spacing: 7px;
+    /* since this is a shadow for text and not for a box it needs to be called 'text-shadow'. positive values for 'h-shadow' and v-shadow'
+    tell shadows to go right and bottom and negative values tell shadows to go left and top. shadows are usually right 
+    and bottom so we are providing shadows with positive values. each r g b vale goes from 0-255 opacity goes from 0-1. 
+    0 means it is completely transparent and 1 means it is completely opaque. 255 for each rgb value is white and 0 for 
+    each rgb value is black*/
+    text-shadow: 3px 3px 2px rgba(255,255,255,0.5);
 }
