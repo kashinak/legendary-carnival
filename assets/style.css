@@ -54,12 +54,33 @@ and right next to each other. next we need to add proper margins and padding to 
     float: right;
     font-size: 40px;
     margin: 100px 130px 100px 100px;
+}
 
+#timer {
+    margin: 50px;
+    /* since it is written after 'margin' value, the below 'margin-left' value will override overall margin value of 
+    50px and make the margin-left vaue to 45px. that;s why they call it cascading style sheet because what is at the 
+    top can be overwritten by what is at the bottom */
+    margin-left: 45px;
+    text-align: center;
+    color: white;
+    text-shadow: 1.5px 1.5px 1px rgba(255,255,255,0.5);
+}
+/* css has collapsing properties when two values merge as the same value such as an upper div 
+with margin-bottom: 50px and lower div with margin-top: 50px; you would think you would have 
+100 px margins between both divs but since css has a collapsing property. CSS collapses margins 
+so if both have the same values of 50px then CSS will count the highest value which is 50px and 
+it will cancel out the other 50px value. If one div had 20px and other div had 10px then CSS 
+would count 20px between the two divs sharing margins.*/
+#score {
+    margin: 50px;
+    margin-left: 38px;
+    color: white;
+    text-shadow: 1.5px 1.5px 1px rgba(255,255,255,0.5);
 }
 
 #game {
     float: left;
-
 }
 
 /* 'inline' means element does not take up the entire width of the page like 'block' element does. selecting 
