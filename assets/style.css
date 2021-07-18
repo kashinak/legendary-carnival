@@ -45,3 +45,27 @@ html {
     each rgb value is black*/
     text-shadow: 3px 3px 2px rgba(255,255,255,0.5);
 }
+
+/* by giving a velue pf 'float' to each of these block element divs, I can make them 'float' side by side, 
+instead of them being on top of each other as naturally occureeing block level div elements do. With 'float' property and 
+values we can float an element to the position we give it; in this cas we are telling 'updates' and 'game' divs to float left 
+and right next to each other. next we need to add proper margins and padding to bring them to the correct positions*/
+#updates {
+    float: right;
+    font-size: 40px;
+    margin: 100px 130px 100px 100px;
+
+}
+
+#game {
+    float: left;
+
+}
+
+/* 'inline' means element does not take up the entire width of the page like 'block' element does. selecting 
+'none' makes sure that these divs are not currently displayed; they are disappeared because while we play the game, these are not seen. 
+Later we use javascript to turn this on to visible after the game is over*/
+
+#opacity, #result {
+    display: none;
+}
