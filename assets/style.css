@@ -1,0 +1,23 @@
+/*override browser default margin and padding properties by setting 
+them to zero so we can overrride them later when we are desiging 
+our elements. This is so the browser has nothing to do with our styles; 
+later all the styles are our own styling.*/
+* {
+    /* usually all programmers give margin and padding as 0 to start on css*/
+    margin: 0;
+    padding: 0;
+    /* because css3 is realtively new introduced in 2013, we need to provide 
+    certain prefixes so that all browser can run css3*/
+    -moz-box-sizing: border-box; /* Firefox */ 
+    -ms-box-sizing: border-box; /* Internet Explorer */
+    -webkit-box-sizing: border-box; /* Google Chrome & Safari */
+    /* from css3, add 'border-box' to instruct the browser to only take margin, 
+    padding or border values/pixels inside the element itself and 
+    not outside the element which would affect the other elements*/
+    box-sizing: border-box;
+    -moz-user-select: none; /* Firefox */ 
+    -ms-user-select: none; /* Internet Explorer */
+    -webkit-user-select: none; /* Google Chrome & Safari */
+    /* from css3, add user select 'none' so that the user cannot select any of the elements on the page*/
+    user-select: none;
+}
