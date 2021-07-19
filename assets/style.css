@@ -152,8 +152,22 @@ of image 150px and giving a bit more height 125pax more than 105px height for im
     cursor: pointer;
 }
 
+.front {
+    position: absolute;
+    width: 150px;
+    height: 125px;
+    font-size: 120px;
+    font-weight: bolder;
+    padding: 0px 5px 50px 35px;
+    margin: 0;
+    text-shadow: 4px 3px 7px rgba(94, 119, 115, 0.82);
+}
+
 .back {
-    
+    position: absolute;
+    width: 150px;
+    height: 125px;
+    padding: 5px;
 }
 
 /*resize all the img files to smaller file becuase they are too big right now. you odn't need to resize outside of 
