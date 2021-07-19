@@ -115,10 +115,36 @@ game button, what happens? cursor becomes tha hand pointer*/
     margin: 10px 20px 20px 100px;
     border: 2px solid black;
     /* so that every card has a solid black border, we make the background-color 'black' */
-    /* background-color: black; */
+    background-color: black;
     /* a slight change in the color of the shadow for the blue value but everything 
     else is the same as the box-shadow values for the new game button*/
     box-shadow: 4px 4px 3px 0px rgba(119, 116, 128, 1);
+}
+
+
+/* essentailly bringing both image and question mark divs inside the same box '.card' keeping the same width 
+of image 150px and giving a bit more height 125pax more than 105px height for images */
+.cards {
+    width: 150px;
+    height: 125px;
+    border: 1px solid black;
+    /*beacuse all the ".cards" divs are block level elements by default, they take up the entire width of the page. 
+    This is why you see them stacked on top of each othr in one very long column. We want them to display side by side 
+    so we can add a display property with a value of 'display-block' which means that the div will reamin with mostly 
+    block element properties but the only thing wil change the display property value to 'inline' so that ".class" 
+    divs are displayed side by side. Now all your cards will fill the entire box 'game' area we made earlier. each card 
+    will automatically fill the 775px width game board side by side. so we gave container a proper width of 775px and 
+    then set display to inline-block  so even though they are div elements they get stacked horizontally instead of 
+    vertically*/
+    display: inline-block;
+    float: left;
+    /*add margin value of 2px to properly align the cards within the game box. After float left was added and 
+    you had a left space that was bigger than other space within the box but when you add 2px border to 
+    all sides of each card then the space is equally divided aournd each card and the larger left space 
+    is no longer*/
+    margin: 2px;
+    /* padding: 5px; */
+    background-color: white;
 }
 
 /*resize all the img files to smaller file becuase they are too big right now. you odn't need to resize outside of 
