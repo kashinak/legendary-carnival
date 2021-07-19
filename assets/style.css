@@ -128,7 +128,7 @@ of image 150px and giving a bit more height 125pax more than 105px height for im
     width: 150px;
     height: 125px;
     border: 1px solid black;
-    /*beacuse all the ".cards" divs are block level elements by default, they take up the entire width of the page. 
+    /*because all the ".cards" divs are block level elements by default, they take up the entire width of the page. 
     This is why you see them stacked on top of each othr in one very long column. We want them to display side by side 
     so we can add a display property with a value of 'display-block' which means that the div will reamin with mostly 
     block element properties but the only thing wil change the display property value to 'inline' so that ".class" 
@@ -145,6 +145,15 @@ of image 150px and giving a bit more height 125pax more than 105px height for im
     margin: 2px;
     /* padding: 5px; */
     background-color: white;
+}
+
+.cards:hover {
+    background-color: #f2f2f2;
+    cursor: pointer;
+}
+
+.back {
+    
 }
 
 /*resize all the img files to smaller file becuase they are too big right now. you odn't need to resize outside of 
