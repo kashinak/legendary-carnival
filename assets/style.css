@@ -179,7 +179,8 @@ of image 150px and giving a bit more height 125pax more than 105px height for im
     backface-visibility: hidden;
 }
 
-/*resize all the img files to smaller file becuase they are too big right now. you odn't need to resize outside of 
+/*resize all the img files to smaller file becuase they are too big right now. 
+you odn't need to resize outside of 
 IDE, you can resize images within your workspace using css*/
 img {
     width: 150px;
@@ -190,13 +191,159 @@ img {
 divs on a clean board with nothing else on it. We also removed the display: none from 
 our opacityD and result id divs so we can see them and design them*/
 #head, #updates, #game {
-    display: none;
+    /* display: none; */
 }
 
-/* 'inline' means element does not take up the entire width of the page like 'block' element does. selecting 
-'none' makes sure that these divs are not currently displayed; they are disappeared because while we play the game, these are not seen. 
+/* 'inline' means element does not take up the entire width of the page like 'block' 
+element does. selecting 'none' makes sure that these divs are not currently displayed; 
+they are disappeared because while we play the game, these are not seen. 
 Later we use javascript to turn this on to visible after the game is over*/
 
 #opacityD, #result {
+    display:none;
+}
+
+#opacityD {
+/*/ set postion: fixed meaning that the element will alwys stay in one place fixed 
+despite scrolling down. we use this so the opacityD element takes up the entire screen.
+Every div element is a rectangle element*/
+    position: fixed;
+/* set top and left values to 0 so the div has no distance from the topleft corner */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+/* if you don't have both width and height values the div will be invisible so we 
+will also add a hight value of 100%*/
+    background-color: black;
+/* we set an opacity property with a value from 0-1 where 0 is complete transparancy 
+and 1 is completely opaque*/
+    opacity: 0.8;
+/* you can make z-index anthing you want as long as you make it a large enough 
+value so it will always take precedence*/
+    z-index: 10;
+}
+
+#result {
+    /* can make this the same z-index value as #opacityD and still be visible 
+    on top of #opacity div becuase it's html comes after the #opacityD div so 
+    it will naturally fall on top unless overrriden by a previous div with 
+    a higher z-index value*/
+    z-index: 10;
+    position: fixed;
+    width: 500px;
+    /*changed height to auto so that it would automatically increase when 
+    creating the height property to fit all the smaller elements within 
+    this div such as the #popOkay*/
+    height: auto;
+    /* deleted border becuase it was causing gaps of both top and bottom of 
+    this container's border. To fix this I created separate border properties 
+    for individual #result children #popBody */
+    /* border: 2px solid #511519; */
+    /* add border-radius to curve the border*/
+    /* border-radius: 7px; */
+}
+
+#popBody {
+    background-color: white;
+    width: 500px;
+    height: 250px;
+    border-style: solid;
+    border-width: 2px 2px 0px 2px;
+    border-color: #511519;
+    /*since we don't want the bottom left right border radius 
+    applied we only apply to top left right radius*/
+    border-top-right-radius: 7px;
+    border-top-left-radius: 7px;
+}
+
+#imgDiv {
+    /* position rletaive in respect to it's parent #popBody*/
+    position: relative;
+    /* provide height and width to form the div first before apllying margin property*/
+    width: 100px;
+    height: 107px;
+    /* since this is not a text element you can't use text-align to 
+    center it because a div element. in order to center div element 
+    first you have to give a top and bottom border (20px) using margin 
+    property and give 'auto' for right and left which automatically 
+    evenly divides the space to the right and left of its parent 
+    which is how it automatically places it to the center. We need 
+    this div because only margins can be given to div elements because 
+    they are block elements. We could not have given margins to the img 
+    element becuase it is not a block element so it was necessary to 
+    wrap it in a div aelement to adjust it's margin proeprties. elements 
+    such as button and img are inline elements so you can't give them 
+    margin: auto or any margin properties becuae they are inline and 
+    not block elements. so it's much better to embed inline elements 
+    inside block div elements if you want to properly align them*/
+    margin: 20px auto;
+    top: 10px;
+}
+
+/* to make the image so it is properly aligned in center and it is properly 
+formatted so it is not squished made the image itself in its own 
+size 100*107px*/
+#imgDiv img {
+    width: 100px;
+    height: 107px;
+}
+
+#h1Res {
+    margin: 0px 12px 12px 12px;
+    font-family: cursive;
+    text-align: center;
+    color: #4d0000;
+}
+
+/* font size set at h1 font size of 20px to match h1 element */
+#pRes {
+    color: #4d0000;
+    text-align: center;
+    font-size: 20px;
+}
+
+#popOkay {
+    height: 100px;
+    background-color: #cf4a51;
+    padding: 25px;
+    border-style: solid;
+    border-width: 0px 2px 2px 2px;
+    border-color: #511519;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+
+}
+
+/* again wrapped #okayButton div element 
+around button element so I could apply margin auto and 
+enter the button*/
+#okayButton {
+/* give a height and width property to first form the element; 
+otherwise you won't be able to use a margin property*/
+    height: 50px;
+    width: 95px;
+    margin: 0px auto;
+}
+
+/*grow the button so it takes up the entire widht and height of 
+parent container #okayButton, by giving it same height and 
+width to fill the entire div with button size*/
+#okayButton button {
+    height: 50px;
+    width: 95px;
+    text-align: center;
+    font-size: 18px;
+    background-color: #4d0000;
+    color: white;
+    box-shadow: 0px 2px 2px 0.5px rgba(0,0,0,0.5);
+    /*removed border because buttons have a default border*/
+    border: none;
+    text-shadow: 0px 2px 2px rgba(0,0,0,0.3);
+    cursor: pointer;
+    border-radius: 5px;
+    /*set outline to none so when you click on button it does 
+    not produce an outline*/
+    outline: none;
 
 }
