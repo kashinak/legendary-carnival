@@ -161,6 +161,12 @@ of image 150px and giving a bit more height 125pax more than 105px height for im
     padding: 0px 5px 50px 35px;
     margin: 0;
     text-shadow: 4px 3px 7px rgba(94, 119, 115, 0.82);
+    transform: rotateY(0deg);
+    /*just mentioning 'transform' property will not make the tranform happen 
+    unless you apply the transition: property time-duration type delay in which it has to 
+    be transitioned*/
+    transition: transform 0.5s linear 0s;
+    backface-visibility: hidden;
 }
 
 .back {
@@ -168,6 +174,9 @@ of image 150px and giving a bit more height 125pax more than 105px height for im
     width: 150px;
     height: 125px;
     padding: 5px;
+    transform: rotateY(180deg);
+    transition: transform 0.5s linear 0s;
+    backface-visibility: hidden;
 }
 
 /*resize all the img files to smaller file becuase they are too big right now. you odn't need to resize outside of 
@@ -177,10 +186,17 @@ img {
     height: 105px;
 }
 
+/*temporarily made all our work disappear so we can design our opacityD and result 
+divs on a clean board with nothing else on it. We also removed the display: none from 
+our opacityD and result id divs so we can see them and design them*/
+#head, #updates, #game {
+    display: none;
+}
+
 /* 'inline' means element does not take up the entire width of the page like 'block' element does. selecting 
 'none' makes sure that these divs are not currently displayed; they are disappeared because while we play the game, these are not seen. 
 Later we use javascript to turn this on to visible after the game is over*/
 
-#opacity, #result {
-    display: none;
+#opacityD, #result {
+
 }
