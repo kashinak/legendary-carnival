@@ -105,6 +105,27 @@ game button, what happens? cursor becomes tha hand pointer*/
 
 #game {
     float: left;
+    /* gave it 775px width instead of 750x width to account for 5 * 150 for 5 cards each 150 width, 
+    we added some pad to account for the black borders around each card*/
+    width: 775px;
+    /* give game div a height of 'auto' so it doesn't become problomatic later on, so assigning the value of 'auto' 
+    will give it a height as long as it has to go
+    height: auto;*/
+    height: auto;
+    margin: 10px 20px 20px 100px;
+    border: 2px solid black;
+    /* so that every card has a solid black border, we make the background-color 'black' */
+    /* background-color: black; */
+    /* a slight change in the color of the shadow for the blue value but everything 
+    else is the same as the box-shadow values for the new game button*/
+    box-shadow: 4px 4px 3px 0px rgba(119, 116, 128, 1);
+}
+
+/*resize all the img files to smaller file becuase they are too big right now. you odn't need to resize outside of 
+IDE, you can resize images within your workspace using css*/
+img {
+    width: 150px;
+    height: 105px;
 }
 
 /* 'inline' means element does not take up the entire width of the page like 'block' element does. selecting 
