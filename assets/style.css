@@ -1,349 +1,220 @@
-/*override browser default margin and padding properties by setting 
-them to zero so we can overrride them later when we are desiging 
-our elements. This is so the browser has nothing to do with our styles; 
-later all the styles are our own styling. '*' selects all elements on the page*/
 * {
-    /* usually all programmers give margin and padding as 0 to start on css*/
-    margin: 0;
-    padding: 0;
-    /* because css3 is realtively new introduced in 2013, we need to provide 
-    certain prefixes so that all browser can run css3*/
-    -moz-box-sizing: border-box; /* Firefox */ 
-    -ms-box-sizing: border-box; /* Internet Explorer */
-    -webkit-box-sizing: border-box; /* Google Chrome & Safari */
-    /* from css3, add 'border-box' to instruct the browser to only take margin, 
-    padding or border values/pixels inside the element itself and 
-    not outside the element which would affect the other elements*/
-    box-sizing: border-box;
-    -moz-user-select: none; /* Firefox */ 
-    -ms-user-select: none; /* Internet Explorer */
-    -webkit-user-select: none; /* Google Chrome & Safari */
-    /* from css3, add user select 'none' so that the user cannot select any of the elements on the page*/
-    user-select: none;
+	margin: 0;
+	padding: 0;
+	-moz-box-sizing: border-box; /* Firefox */
+	-ms-box-sizing: border-box; /* Internet Explorer */
+	-webkit-box-sizing: border-box; /* Google Chrome & Safari */
+	box-sizing: border-box;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
 }
 
-/*by selecting 'html', you are selecting the root of the page; the entire page. 
-So if you want to set the background color of the entire page you select the 'html' root */
 html {
-    background-color: #333333;
+	background-color: #333333;
 }
 
 #h1 {
-    color: #f2f2f2;
-    text-align: center;
-    font-size: 90px;
-    margin-top: 0px;
-    font-weight: bolder;
-    /* 'letter-spacing' is kerning between each letter. It overrrides default browser letter spacing.*/
-    letter-spacing: 3px;
-    /* 'word-spacing' gives spacing between two words */
-    word-spacing: 7px;
-    /* since this is a shadow for text and not for a box it needs to be called 'text-shadow'. positive values for 'h-shadow' and v-shadow'
-    tell shadows to go right and bottom and negative values tell shadows to go left and top. shadows are usually right 
-    and bottom so we are providing shadows with positive values. each r g b vale goes from 0-255 opacity goes from 0-1. 
-    0 means it is completely transparent and 1 means it is completely opaque. 255 for each rgb value is white and 0 for 
-    each rgb value is black*/
-    text-shadow: 3px 3px 2px rgba(255, 255, 255, 0.5);
+	color: #f2f2f2;
+	text-align: center; 
+	font-size: 90px;
+	margin-top: 0px; 
+	font-weight: bolder; 
+	letter-spacing: 3px;
+	word-spacing: 7px;
+	text-shadow: 3px 3px 2px rgba(255,255,255,0.5);
 }
 
-/* by giving a velue pf 'float' to each of these block element divs, I can make them 'float' side by side, 
-instead of them being on top of each other as naturally occureeing block level div elements do. With 'float' property and 
-values we can float an element to the position we give it; in this cas we are telling 'updates' and 'game' divs to float left 
-and right next to each other. next we need to add proper margins and padding to bring them to the correct positions*/
 #updates {
-    float: right;
-    font-size: 40px;
-    margin: 100px 130px 100px 100px;
+	float: right;
+	font-size: 40px;
+	margin: 100px 130px 100px 100px; 
 }
 
 #timer {
-    margin: 50px;
-    /* since it is written after 'margin' value, the below 'margin-left' value will override overall margin value of 
-    50px and make the margin-left vaue to 45px. that;s why they call it cascading style sheet because what is at the 
-    top can be overwritten by what is at the bottom */
-    margin-left: 45px;
-    text-align: center;
-    color: white;
-    text-shadow: 1.5px 1.5px 1px rgba(255, 255, 255, 0.5);
+	margin: 50px;
+	margin-left: 45px;
+	text-align: center;
+	color: white;
+	text-shadow: 1.5px 1.5px 1px rgba(255,255,255,0.5);
 }
-/* css has collapsing properties when two values merge as the same value such as an upper div 
-with margin-bottom: 50px and lower div with margin-top: 50px; you would think you would have 
-100 px margins between both divs but since css has a collapsing property. CSS collapses margins 
-so if both have the same values of 50px then CSS will count the highest value which is 50px and 
-it will cancel out the other 50px value. If one div had 20px and other div had 10px then CSS 
-would count 20px between the two divs sharing margins.*/
+
 #score {
-    margin: 50px;
-    margin-left: 38px;
-    color: white;
-    /* text-shadow has the following properties: h-shadow v-shadow blur rgbs*/
-    text-shadow: 1.5px 1.5px 1px rgba(255, 255, 255, 0.5);
+	margin: 50px;
+	margin-left: 38px;
+	color: white;
+	text-shadow: 1.5px 1.5px 1px rgba(255,255,255,0.5);
 }
 
 #new {
-    background-color: #e6e6e6;
-    margin: 16px;
-    font-size: 40px;
-    font-weight: 500;
-    text-shadow: 2px 2px 2px rgba(94, 119, 115, 0.82);
-    /* border property has the following values: width type color - where width is size of the border, 
-    type is type of line such as: solid dashed dotted.*/
-    border: 1px solid grey;
-    /* box-shadow has the following values: h-shadow v-shadow blur spread rgbs. remeber two positive values 
-    will give you a bottom right dropshadow */
-    box-shadow: 2px 2px 1px 0px rgba(119, 116, 115, 1);
-    font-family: serif;
+	background-color: #e6e6e6;
+	margin: 16px;
+	font-size: 40px;
+	font-weight: 500;
+	text-shadow: 2px 2px 2px rgba(94,119,115,0.82);
+	border: 1px solid grey;
+	box-shadow: 2px 2px 1px 0px rgba(119,116,115,1);
+	font-family: serif;
+ 
 }
 
-/* whenever you want to choose a hover condtion - what happens to an element when you hover over it, you need to 
-add a pseudo selector by selecting the element, add colon then the effect of hover. so when we hover over this 'new' 
-game button, what happens? cursor becomes tha hand pointer*/
 #new:hover {
-    cursor:pointer;
-    background-color: #cccccc;
+	cursor: pointer;
+	background-color: #cccccc;
 }
 
 #game {
-    float: left;
-    /* gave it 775px width instead of 750x width to account for 5 * 150 for 5 cards each 150 width, 
-    we added some pad to account for the black borders around each card*/
-    width: 775px;
-    /* give game div a height of 'auto' so it doesn't become problomatic later on, so assigning the value of 'auto' 
-    will give it a height as long as it has to go
-    height: auto;*/
-    height: auto;
-    margin: 10px 20px 20px 100px;
-    border: 2px solid black;
-    /* so that every card has a solid black border, we make the background-color 'black' */
-    background-color: black;
-    /* a slight change in the color of the shadow for the blue value but everything 
-    else is the same as the box-shadow values for the new game button*/
-    box-shadow: 4px 4px 3px 0px rgba(119, 116, 128, 1);
+	float: left;
+	width: 775px;
+	height: auto;
+	margin: 10px 20px 20px 100px;
+	border: 2px solid black;
+	background-color: black;
+	box-shadow: 4px 4px 3px 0px rgba(119,116,128,1);
 }
 
-
-/* essentailly bringing both image and question mark divs inside the same box '.card' keeping the same width 
-of image 150px and giving a bit more height 125pax more than 105px height for images */
 .cards {
-    width: 150px;
-    height: 125px;
-    border: 1px solid black;
-    /*because all the ".cards" divs are block level elements by default, they take up the entire width of the page. 
-    This is why you see them stacked on top of each othr in one very long column. We want them to display side by side 
-    so we can add a display property with a value of 'display-block' which means that the div will reamin with mostly 
-    block element properties but the only thing wil change the display property value to 'inline' so that ".class" 
-    divs are displayed side by side. Now all your cards will fill the entire box 'game' area we made earlier. each card 
-    will automatically fill the 775px width game board side by side. so we gave container a proper width of 775px and 
-    then set display to inline-block  so even though they are div elements they get stacked horizontally instead of 
-    vertically*/
-    display: inline-block;
-    float: left;
-    /*add margin value of 2px to properly align the cards within the game box. After float left was added and 
-    you had a left space that was bigger than other space within the box but when you add 2px border to 
-    all sides of each card then the space is equally divided aournd each card and the larger left space 
-    is no longer*/
-    margin: 2px;
-    /* padding: 5px; */
-    background-color: white;
+	width: 150px; 
+	height: 125px;
+	border: 1px solid black;
+	display: inline-block;
+	float: left;
+	margin: 2px;
+	/*padding: 5px;*/
+	background-color: white;
 }
 
 .cards:hover {
-    background-color: #f2f2f2;
-    cursor: pointer;
+	background-color: #f2f2f2;
+	cursor: pointer; 
+}
+
+img {
+	width: 120px;
+	height: 105px;
 }
 
 .front {
-    position: absolute;
-    width: 150px;
-    height: 125px;
-    font-size: 120px;
-    font-weight: bolder;
-    padding: 0px 5px 50px 35px;
-    margin: 0;
-    text-shadow: 4px 3px 7px rgba(94, 119, 115, 0.82);
-    transform: rotateY(0deg);
-    /*just mentioning 'transform' property will not make the tranform happen 
-    unless you apply the transition: property time-duration type delay in which it has to 
-    be transitioned*/
-    transition: transform 0.5s linear 0s;
-    backface-visibility: hidden;
+	position: absolute;
+	width: 150px; 
+	height: 125px; 
+	font-size: 120px; 
+	font-weight: bolder; 
+	padding: 0px 5px 50px 35px; 
+	margin: 0;
+	text-shadow: 4px 3px 7px rgba(94,119,115,0.82);
+	transform: rotateY(0deg);
+	transition: transform 0.5s linear 0s; 
+	backface-visibility: hidden;
 }
 
 .back {
-    position: absolute;
-    width: 150px;
-    height: 125px;
-    padding: 5px;
-    transform: rotateY(180deg);
-    transition: transform 0.5s linear 0s;
-    backface-visibility: hidden;
+	position: absolute; 
+	width: 150px; 
+	height: 125px; 
+	padding: 5px; 
+	transform: rotateY(180deg);
+	transition: transform 0.5s linear 0s; 
+	backface-visibility: hidden;
 }
 
-/*resize all the img files to smaller file becuase they are too big right now. 
-you odn't need to resize outside of 
-IDE, you can resize images within your workspace using css*/
-img {
-    width: 150px;
-    height: 105px;
-}
-
-/*temporarily made all our work disappear so we can design our opacityD and result 
-divs on a clean board with nothing else on it. We also removed the display: none from 
-our opacityD and result id divs so we can see them and design them*/
 #head, #updates, #game {
-    /* display: none; */
 }
-
-/* 'inline' means element does not take up the entire width of the page like 'block' 
-element does. selecting 'none' makes sure that these divs are not currently displayed; 
-they are disappeared because while we play the game, these are not seen. 
-Later we use javascript to turn this on to visible after the game is over*/
 
 #opacityD, #result {
-    display:none;
+	display: none; 
 }
 
 #opacityD {
-/*/ set postion: fixed meaning that the element will alwys stay in one place fixed 
-despite scrolling down. we use this so the opacityD element takes up the entire screen.
-Every div element is a rectangle element*/
-    position: fixed;
-/* set top and left values to 0 so the div has no distance from the topleft corner */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-/* if you don't have both width and height values the div will be invisible so we 
-will also add a hight value of 100%*/
-    background-color: black;
-/* we set an opacity property with a value from 0-1 where 0 is complete transparancy 
-and 1 is completely opaque*/
-    opacity: 0.8;
-/* you can make z-index anthing you want as long as you make it a large enough 
-value so it will always take precedence*/
-    z-index: 10;
+	position: fixed; 
+	top: 0;
+	left: 0;
+	width: 100%; 
+	height: 100%;
+	background-color: black; 
+	opacity: 0.8;
+	z-index: 10;
 }
 
 #result {
-    /* can make this the same z-index value as #opacityD and still be visible 
-    on top of #opacity div becuase it's html comes after the #opacityD div so 
-    it will naturally fall on top unless overrriden by a previous div with 
-    a higher z-index value*/
-    z-index: 10;
-    position: fixed;
-    width: 500px;
-    /*changed height to auto so that it would automatically increase when 
-    creating the height property to fit all the smaller elements within 
-    this div such as the #popOkay*/
-    height: auto;
-    /* deleted border becuase it was causing gaps of both top and bottom of 
-    this container's border. To fix this I created separate border properties 
-    for individual #result children #popBody */
-    /* border: 2px solid #511519; */
-    /* add border-radius to curve the border*/
-    /* border-radius: 7px; */
+	z-index: 10;
+	position: fixed;
+	width: 500px; 
+	height: auto;
 }
 
 #popBody {
-    background-color: white;
-    width: 500px;
-    height: 250px;
-    border-style: solid;
-    border-width: 2px 2px 0px 2px;
-    border-color: #511519;
-    /*since we don't want the bottom left right border radius 
-    applied we only apply to top left right radius*/
-    border-top-right-radius: 7px;
-    border-top-left-radius: 7px;
+	background-color: white; 
+	height: 250px;
+	border-style: solid;
+	border-width: 2px 2px 0px 2px;
+	border-color: #511519;
+	border-top-right-radius: 7px;
+	border-top-left-radius: 7px; 
 }
 
 #imgDiv {
-    /* position rletaive in respect to it's parent #popBody*/
-    position: relative;
-    /* provide height and width to form the div first before apllying margin property*/
-    width: 100px;
-    height: 107px;
-    /* since this is not a text element you can't use text-align to 
-    center it because a div element. in order to center div element 
-    first you have to give a top and bottom border (20px) using margin 
-    property and give 'auto' for right and left which automatically 
-    evenly divides the space to the right and left of its parent 
-    which is how it automatically places it to the center. We need 
-    this div because only margins can be given to div elements because 
-    they are block elements. We could not have given margins to the img 
-    element becuase it is not a block element so it was necessary to 
-    wrap it in a div aelement to adjust it's margin proeprties. elements 
-    such as button and img are inline elements so you can't give them 
-    margin: auto or any margin properties becuae they are inline and 
-    not block elements. so it's much better to embed inline elements 
-    inside block div elements if you want to properly align them*/
-    margin: 20px auto;
-    top: 10px;
+	position: relative; 
+	width: 100px;
+	height: 107px; 
+	margin: 20px auto;
+	top: 10px; 
 }
 
-/* to make the image so it is properly aligned in center and it is properly 
-formatted so it is not squished made the image itself in its own 
-size 100*107px*/
 #imgDiv img {
-    width: 100px;
-    height: 107px;
+	width: 100px;
+	height: 107px;
 }
 
 #h1Res {
-    margin: 0px 12px 12px 12px;
-    font-family: cursive;
-    text-align: center;
-    color: #4d0000;
+	margin: 0px 12px 12px 12px; 
+	font-family: cursive; 
+	text-align: center; 
+	color: #4d0000;
 }
 
-/* font size set at h1 font size of 20px to match h1 element */
 #pRes {
-    color: #4d0000;
-    text-align: center;
-    font-size: 20px;
+	color: #4d0000;
+	text-align: center; 
+	font-size: 20px; 
 }
 
 #popOkay {
-    height: 100px;
-    background-color: #cf4a51;
-    padding: 25px;
-    border-style: solid;
-    border-width: 0px 2px 2px 2px;
-    border-color: #511519;
-    border-bottom-left-radius: 7px;
-    border-bottom-right-radius: 7px;
-
+	height: 100px; 
+	background-color: #cf4a53;
+	padding: 25px; 
+	border-style: solid;
+	border-width: 0px 2px 2px 2px; 
+	border-color: #511519;
+	border-bottom-right-radius: 7px; 
+	border-bottom-left-radius: 7px; 
 }
 
-/* again wrapped #okayButton div element 
-around button element so I could apply margin auto and 
-enter the button*/
 #okayButton {
-/* give a height and width property to first form the element; 
-otherwise you won't be able to use a margin property*/
-    height: 50px;
-    width: 95px;
-    margin: 0px auto;
+	height: 50px;
+	width: 95px; 
+	margin: 0px auto; 
 }
 
-/*grow the button so it takes up the entire widht and height of 
-parent container #okayButton, by giving it same height and 
-width to fill the entire div with button size*/
 #okayButton button {
-    height: 50px;
-    width: 95px;
-    text-align: center;
-    font-size: 18px;
-    background-color: #4d0000;
-    color: white;
-    box-shadow: 0px 2px 2px 0.5px rgba(0,0,0,0.5);
-    /*removed border because buttons have a default border*/
-    border: none;
-    text-shadow: 0px 2px 2px rgba(0,0,0,0.3);
-    cursor: pointer;
-    border-radius: 5px;
-    /*set outline to none so when you click on button it does 
-    not produce an outline*/
-    outline: none;
-
+	height: 50px; 
+	width: 95px; 
+	text-align: center; 
+	font-size: 18px;
+	background-color: #4d0000;
+	color: white;
+	box-shadow: 0px 2px 2px 0.5px rgba(0,0,0,0.5);
+	border: none; 
+	text-shadow: 0px 2px 2px rgba(0,0,0,0.3);
+	cursor: pointer; 
+	border-radius: 5px; 
+	outline: none; 
 }
+
+
+
+
+
+
+
